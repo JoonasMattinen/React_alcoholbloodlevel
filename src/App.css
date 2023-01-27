@@ -1,0 +1,15 @@
+form{
+    background-color: orange;
+    display: inline-block;
+    border: solid 8px black;
+    border-radius: 5px;
+    padding: 10px;
+}
+button:hover{
+    background-color: black;
+    color: orange;
+    border-radius:4px;
+}
+
+    
+
