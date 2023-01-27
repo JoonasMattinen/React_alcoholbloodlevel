@@ -28,7 +28,7 @@ function App() {
     if (alcoholLevel < 0) {
       alcoholLevel = 0
     }
-    if(alcoholLevel < 0.5)
+    if(alcoholLevel)
     setresult(alcoholLevel)
   }
   return (
