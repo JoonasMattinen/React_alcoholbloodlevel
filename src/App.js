@@ -15,18 +15,23 @@ function App() {
     let litres = bottles * 0.33
     let grams = litres * 8 * 4.5
     let burning = weight / 10
-    let alcoholLeft = grams - (burning * time)
-    
+    let gramsleft = grams - (burning * time)
+    let alcoholLevel = 0
 
-    if(gender === "male"){
-      alcoholLeft = grams / (weight * 0.7)
+
+    if (gender === "male") {
+      alcoholLevel = gramsleft / (weight * 0.7)
     }
-    else{
-      alcoholLeft = grams / (weight * 0.6)
+    else {
+      alcoholLevel = gramsleft / (weight * 0.6)
     }
-    setresult(alcoholLeft)
+    if (alcoholLevel < 0) {
+      alcoholLevel = 0
+    }
+    setresult(alcoholLevel)
   }
   return (
+
     <form onSubmit={handleSubmit}>
       <h1>Calculating alcohol blood level</h1>
       <div>
@@ -45,9 +50,12 @@ function App() {
         <input type="radio" name="gender" value="male" defaultChecked onChange={e => setgender(e.target.value)} /><label>Male</label>
         <input type="radio" name="gender" value="female" onChange={e => setgender(e.target.value)} /><label>Female</label>
       </div>
-      <output>{result.toFixed(0)} </output>
-      <button type="button">Calculate</button>
+      <div>
+        <output>{result.toFixed(2)}</output>
+      </div>
+      <button type="submit">Calculate</button>
     </form>
+
   );
 }
 
