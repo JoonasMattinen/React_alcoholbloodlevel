@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import './App.css';
+import Options from './components/Options';
 
 function App() {
 
@@ -41,11 +42,15 @@ function App() {
       </div>
       <div class="row-mb-3">
         <label class="col-sm-2 col-form-label">Bottles </label>
-        <input type="number" name="bottles" value={bottles} onChange={e => setbottles(e.target.value)}></input>
+        <select value={bottles} onChange={e => setbottles(e.target.value)}>
+          <Options/>
+        </select>
       </div>
       <div class="row-mb-3">
         <label class="col-sm-2 col-form-label">time </label>
-        <input type="number" name="time" value={time} onChange={e => settime(e.target.value)}></input>
+        <select value={time} onChange={e => settime(e.target.value)}>
+          <Options/>
+        </select>
       </div>
       <div class="row-mb-3">
         <div class="col-sm-10">
