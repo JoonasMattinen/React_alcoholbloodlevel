@@ -26,10 +26,11 @@ function App() {
     else {
       alcoholLevel = gramsleft / (weight * 0.6)
     }
+
     if (alcoholLevel < 0) {
       alcoholLevel = 0
     }
-    if(alcoholLevel)
+
     setresult(alcoholLevel)
   }
   return (
@@ -43,13 +44,13 @@ function App() {
       <div class="row-mb-3">
         <label class="col-sm-2 col-form-label">Bottles </label>
         <select value={bottles} onChange={e => setbottles(e.target.value)}>
-          <Options/>
+          <Options />
         </select>
       </div>
       <div class="row-mb-3">
         <label class="col-sm-2 col-form-label">time </label>
         <select value={time} onChange={e => settime(e.target.value)}>
-          <Options/>
+          <Options />
         </select>
       </div>
       <div class="row-mb-3">
